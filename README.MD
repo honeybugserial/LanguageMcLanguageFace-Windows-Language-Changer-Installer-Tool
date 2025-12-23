@@ -4,6 +4,8 @@ A self-contained Python utility for discovering, downloading, and installing
 Windows language packs (Language Experience Packs, CAB language packs, and
 Features on Demand) on Windows 10 / 11 systems.
 
+Or use the compiled exe.
+
 ---
 
 ## Features
