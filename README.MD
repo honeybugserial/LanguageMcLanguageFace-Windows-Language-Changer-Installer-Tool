@@ -8,6 +8,9 @@ Or use the compiled exe.
 
 ---
 
+## Update v1.6 May 2026
+- Copy-UserInternationalSettingsToSystem which is the proper modern cmdlet for this, plus writing directly to the MUI registry keys as a belt-and-suspenders approach. Falls back to intl.cpl if the cmdlet isn't available on older Windows versions.
+
 ## Features
 
 - **Does NOT rely on Windows Update, Microsoft Store, or UWP services**
