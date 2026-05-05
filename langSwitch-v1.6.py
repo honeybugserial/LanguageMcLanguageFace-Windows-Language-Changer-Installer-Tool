@@ -69,9 +69,14 @@ MENU_STYLE = Style([
 # ============================================================
 
 def get_exe_dir() -> Path:
+    """Directory next to the exe — for user files (downloads, logs)."""
     if getattr(sys, "frozen", False):
         return Path(sys.executable).resolve().parent
     return Path(__file__).resolve().parent
+
+def get_resource_dir() -> Path:
+    """Bundled read-only resources — uses _MEIPASS when frozen."""
+    return Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 
 
 EXE_DIR = get_exe_dir()
@@ -138,9 +143,9 @@ DRY_RUN = "--dry-run" in sys.argv
 # ============================================================
 
 INPUT_FILES = [
-    EXE_DIR / "win10LangExpPacks.dat",
-    EXE_DIR / "win10FoD.dat",
-    EXE_DIR / "win10LangOpts.dat",
+    get_resource_dir() / "win10LangExpPacks.dat",
+    get_resource_dir() / "win10FoD.dat",
+    get_resource_dir() / "win10LangOpts.dat",
 ]
 
 DOWNLOAD_ROOT = EXE_DIR / "downloads"
